@@ -6,7 +6,7 @@ def write_to_database(item)
   result
 end
 
-def write_to_database(item_id)
+def read_from_database(item_id)
   puts "Starting reading from database"
   item = DB.read(item_id)
   puts "Completing reading from database"
@@ -33,7 +33,7 @@ end
 def read_from_cache(item_id)
   with_logging("cache read") do
     item = Cache.read(item_id)
-    unless result
+    unless item
      item = DB.read(item_id)
      Cache.write(item)
     end
