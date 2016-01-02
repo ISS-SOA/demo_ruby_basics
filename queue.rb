@@ -3,10 +3,10 @@ q = Queue.new
 # => #<Thread::Queue:0x007fa7ea178ee8>
 
 th = Thread.new do
-  while true do
+  loop do
     job = q.pop
     sleep(rand(2..4))
-    puts ("Finished working on: #{job}")
+    puts "Finished working on: #{job}"
   end
 end
 
