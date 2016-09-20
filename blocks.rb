@@ -36,7 +36,7 @@ def read_from_database(item_id)
   item
 end
 
-
+#
 # LOGGING WITH BLOCKS
 def with_logging(description)
   puts "Starting #{description}"
@@ -57,8 +57,8 @@ def read_from_cache(item_id)
   with_logging('cache read') do
     item = Cache.read(item_id)
     unless item
-     item = DB.read(item_id)
-     Cache.write(item)
+      item = DB.read(item_id)
+      Cache.write(item)
     end
     item
   end
