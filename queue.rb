@@ -1,12 +1,24 @@
+# Queue Basics
 
 q = Queue.new
-# => #<Thread::Queue:0x007fa7ea178ee8>
 
-th = Thread.new do
+q.push 'first'
+q.push 'second'
+q.push 'third'
+
+3.times { puts q.pop }
+
+# Concurrency with Queues
+require 'concurrent'
+
+q = Queue.new
+
+Concurrent::Promise.execute do
   while true do
     job = q.pop
+
     sleep(rand(2..4))
-    puts ("Finished working on: #{job}")
+    puts "Finished working on: #{job}"
   end
 end
 
