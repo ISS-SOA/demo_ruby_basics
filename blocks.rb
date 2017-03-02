@@ -6,20 +6,36 @@ def my_method
   puts 'Ending my method'
 end
 
-my_method { puts 'Running the block' }
+my_method
+# Starting my method
+# LocalJumpError: no block given (yield)
+
+status = 'Running the block'
+my_method { puts status }
+# Starting my method
+# Running the block
+# Ending my method
 
 def func(x, y, &strategy)
   if strategy
-    yield x, y
+    result = yield x, y
   else
-    x * y
+    result = x * y
   end
+
+  "Result: #{result}"
+end
+
+def func(x, y, &strategy)
+  result = strategy ? yield(x, y) : x * y
+  "Result: #{result}"
 end
 
 func(2.0, 3.0)
+# => "Result: 6.0"
 
-func(2.0, 3.0) { |v1, v2| v1 / v2 }
-
+func(2.0, 3.0) { |num1, num2| num1 / num2 }
+# => "Result: 0.6666666666666666"
 
 # LOGGING EXAMPLE (no blocks)
 def write_to_database(item)
@@ -55,11 +71,12 @@ end
 
 def read_from_cache(item_id)
   with_logging('cache read') do
-    item = Cache.read(item_id)
-    unless item
-     item = DB.read(item_id)
-     Cache.write(item)
-    end
-    item
+    Cache.read(item_id) || encache_from_db(item_id)
   end
+end
+
+def encache_from_db(item_id)
+ item = DB.read(item_id)
+ Cache.write(item)
+ item
 end
