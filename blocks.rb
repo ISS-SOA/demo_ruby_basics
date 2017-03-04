@@ -2,7 +2,7 @@
 
 def my_method
   puts 'Starting my method'
-  yield
+  yield # { puts status }
   puts 'Ending my method'
 end
 
@@ -15,6 +15,8 @@ my_method { puts status }
 # Starting my method
 # Running the block
 # Ending my method
+
+
 
 def func(x, y, &strategy)
   if strategy
@@ -76,7 +78,7 @@ def read_from_cache(item_id)
 end
 
 def encache_from_db(item_id)
- item = DB.read(item_id)
- Cache.write(item)
- item
+  item = DB.read(item_id)
+  Cache.write(item)
+  item
 end
