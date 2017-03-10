@@ -14,7 +14,9 @@ seven_pillars = {
   }
 }
 
+library = { 'books' => [lightness_of_being, seven_pillars] }
 
+# Represent a single book
 class Book
   attr_accessor :title, :author
 
@@ -27,6 +29,7 @@ end
 my_book = Book.new('The Unbearable Lightness of Being', 'Milan Kundera')
 # => #<Book:0x007fd106bde0f0 @author="Milan Kundera", @title="The Unbearable Lightness of Being">
 
+# Represent a collection of books
 class BookLibrary
   def initialize
     @collection = []
@@ -47,11 +50,10 @@ puts my_library.to_json
 lightness_of_being.to_json
 # => "{\"book\":{\"title\":\"The Unbearable Lightness of Being\",\"author\":\"Milan Kundera\"}}"
 
-books = { 'books' => [lightness_of_being, seven_pillars] }
-puts books.to_json
+puts library.to_json
 # {"books":[{"book":{"title":"The Unbearable Lightness of Being","author":"Milan Kundera"}},{"book":{"title":"Seven Pillars of Wisdom","author":"T. E. Lawrence"}}]}
 
-JSON.parse(books.to_json)
+JSON.parse(library.to_json)
 # {"books"=>[{"title"=>"The Unbearable Lightness of Being", "author"=>"Milan Kundera"}, {"title"=>"Seven Pillars of Wisdom", "author"=>"T. E. Lawrence"}]}
 
 
@@ -61,7 +63,7 @@ require 'yaml'
 lightness_of_being.to_yaml
 # => "---\n" + "book:\n" + "  title: The Unbearable Lightness of Being\n" + "  author: Milan Kundera\n"
 
-books.to_yaml
+library.to_yaml
 # => "---\n" +
 # "books:\n" +
 # "- book:\n" +
@@ -71,7 +73,7 @@ books.to_yaml
 # "    title: Seven Pillars of Wisdom\n" +
 # "    author: T. E. Lawrence\n"
 
-YAML.safe_load(books.to_yaml)
+YAML.safe_load(library.to_yaml)
 # => {"books"=>
 #   [{"book"=>{"title"=>"The Unbearable Lightness of Being", "author"=>"Milan Kundera"}},
 #    {"book"=>{"title"=>"Seven Pillars of Wisdom", "author"=>"T. E. Lawrence"}}]}
