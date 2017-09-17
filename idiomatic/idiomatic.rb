@@ -1,9 +1,8 @@
-
 require 'http'
 
 def save_url(url_string, filename)
-  raise ArgumentError, 'url_string must be provided' unless url_string
-  raise ArgumentError, 'filename must be provided' unless filename
+  raise ArgumentError, 'URL must be provided' unless url_string
+  raise ArgumentError, 'file name must be provided' unless filename
   raise IOError, 'file already exists' if File.exist?(filename)
 
   html = HTTP.get(url_string).body.to_s
@@ -13,4 +12,5 @@ rescue StandardError => error
   raise IOError, error
 end
 
-# save_url('https://soumyaray.com', 'ray.html')
+site_url, filename = ARGV
+save_url(site_url, filename)

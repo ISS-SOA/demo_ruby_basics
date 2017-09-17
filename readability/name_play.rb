@@ -31,6 +31,6 @@ end
 # # formalizes full name: takes string, returns string
 # def formal_name(full_name)
 #   names = full_name.split
-#   middle_names = names[1..-2]
-#   [names.first, abbreviated(middle_names), names.last].flatten.compact.join(' ')
+#   middle_initials = abbreviated(names[1..-2])
+#   [names.first, middle_initials, names.last].flatten.compact.join(' ')
 # end
