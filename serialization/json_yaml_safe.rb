@@ -16,6 +16,14 @@ seven_pillars = {
 
 library = { 'books' => [lightness_of_being, seven_pillars] }
 
+library['books']
+
+library['journals']
+
+library.fetch('journals') do
+  { 'journals' => []}
+end
+
 # Represent a single book
 class Book
   attr_accessor :title, :author
