@@ -17,10 +17,10 @@ Concurrent::Promise.execute do
   while true do
     job = q.pop
 
-    sleep(rand(2..4))
-    puts "Finished working on: #{job}"
+    sleep(rand(2..4)) # pretend to work
+    puts "Finished: #{job}"
   end
-end
+end;
 
 q.push('write tests')
 q.push('write code')
