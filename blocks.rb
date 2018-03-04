@@ -16,10 +16,10 @@ my_method { puts status }
 # Running the block
 # Ending my method
 
-
-
-def func(x, y, &strategy)
-  if strategy
+## Strategies using Blocks
+# unidiomatic
+def func(x, y)
+  if block_given?
     result = yield x, y
   else
     result = x * y
@@ -28,6 +28,7 @@ def func(x, y, &strategy)
   "Result: #{result}"
 end
 
+#idiomatic
 def func(x, y, &strategy)
   result = strategy ? yield(x, y) : x * y
   "Result: #{result}"
@@ -39,7 +40,7 @@ func(2.0, 3.0)
 func(2.0, 3.0) { |num1, num2| num1 / num2 }
 # => "Result: 0.6666666666666666"
 
-# LOGGING EXAMPLE (no blocks)
+## LOGGING EXAMPLE (no blocks)
 def write_to_database(item)
   puts 'Starting writing to database'
   result = DB.write(item)
