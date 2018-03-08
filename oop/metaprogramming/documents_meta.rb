@@ -9,3 +9,6 @@ class BasicDocument
     @author = author
   end
 end
+
+# BasicDocument.instance_methods - Object.instance_methods
+# => [:author=, :type, :author, :title, :title=]
