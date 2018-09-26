@@ -14,18 +14,17 @@ end
 # Open and read a file using a block
 def read_file_by_block
   File.open('yellow.txt', 'r') do |file|
-    while line = file.gets
+    while (line = file.gets)
       puts line
     end
-  end                 # file automagically closed
+  end # file automagically closed
 end
 
 # Open and read a file in one slurp!
 def read_file_by_slurp
   red_lines = File.read('red.txt')
-  red_red_wine = red_lines.split("\n")
+  red_lines.split("\n")
 end
-
 
 # Open and (re)write a file using a block
 def write_file_by_block

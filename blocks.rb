@@ -16,6 +16,16 @@ my_method { puts status }
 # Running the block
 # Ending my method
 
+# One use of blocks is to setup/teardown before an operation
+def write_to_db
+  db = [] # open database
+  yield db
+  puts "DB: #{db}" # close database
+end
+
+# now we don't have to worry about opening/closing database for writes:
+write_to_db { |database| database << 5 }
+
 ## Strategies using Blocks
 # unidiomatic
 def func(x, y)
