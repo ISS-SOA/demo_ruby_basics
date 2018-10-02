@@ -30,6 +30,8 @@ Document.new.methods - Object.new.methods
 
 # Reopen and add accessor methods
 class Document
+  puts 'Re-opening and changing Document'
+
   def self.describe_class
     'This is a Document class'
   end

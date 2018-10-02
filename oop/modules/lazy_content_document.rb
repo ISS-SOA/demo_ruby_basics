@@ -3,23 +3,20 @@ require 'yaml'
 module Document
   # Loads document information only when needed
   class LazyContentDocument
-    attr_reader :type
     attr_writer :title, :type, :author, :content
 
     def initialize(path)
       @path = path
-      @document_read = false
     end
 
     def read_document
-      return if @document_read
-      puts('Lazy Load')
-      doc_yaml = YAML.load(File.read(@path))
+      return if @content
+      puts 'Lazy Load'
+      doc_yaml = YAML.safe_load File.read(@path)
       @title = doc_yaml['title']
       @type = doc_yaml['type']
       @author = doc_yaml['author']
       @content = doc_yaml['content']
-      @document_read = true
     end
 
     def title

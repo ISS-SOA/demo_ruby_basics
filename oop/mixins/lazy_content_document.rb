@@ -11,18 +11,16 @@ module Document
 
     def initialize(path)
       @path = path
-      @document_read = false
     end
 
     def read_document
-      return if @document_read
+      return if @content
       puts('Lazy Load')
       doc_yaml = YAML.load(File.read(@path))
       @title = doc_yaml['title']
       @type = doc_yaml['type']
       @author = doc_yaml['author']
       @content = doc_yaml['content']
-      @document_read = true
     end
 
     def title
