@@ -2,7 +2,7 @@
 
 def my_method
   puts 'Starting my method'
-  yield # { puts status }
+  yield
   puts 'Ending my method'
 end
 

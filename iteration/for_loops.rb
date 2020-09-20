@@ -1,12 +1,13 @@
+# rubocop:disable all
 require 'open-uri'
 
-sites = %w[slack github codecademy canvaslms]
-# => ["slack", "github", "codecademy", "canvaslms"]
+sites = %w[slack github codecademy]
+# => ["slack", "github", "codecademy"]
 
 # PROCEDURAL FOR LOOPS
 titles = []
 for site in sites
-  html = open("https://www.#{site}.com").read
+  html = URI.open("https://www.#{site}.com").read
   puts "#{site} scanned"
   capture = html.match(%r{<title>(?<title>.*)<\/title>})
   titles << (capture ? capture[:title] : nil)
