@@ -1,4 +1,6 @@
-# HARD TO READ
+# frozen_string_literal: true
+
+# TESTS PASS BUT HARD TO READ
 
 def formal_name(full_name)
   names = full_name.split
@@ -12,7 +14,7 @@ def formal_name(full_name)
   end
 end
 
-# GUARD CLAUSE
+# CLEARER FLOW OF CODE
 
 # def formal_name(full_name)
 #   names = full_name.split

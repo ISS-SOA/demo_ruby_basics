@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'http'
 
 def save_url(url_string, filename)
@@ -8,8 +10,8 @@ def save_url(url_string, filename)
   html = HTTP.get(url_string).body.to_s
   File.write(filename, html)
   html
-rescue StandardError => error
-  raise IOError, error
+rescue StandardError => e
+  raise IOError, e
 end
 
 site_url, filename = ARGV
