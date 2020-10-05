@@ -1,3 +1,5 @@
+# rubocop:disable all
+
 # ARRAYS
 # ------
 # creating arrays

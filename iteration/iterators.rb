@@ -23,7 +23,7 @@ arr.reduce { |n1, n2| n1 + n2 }
 arr.reduce([]) { |collector, n| collector << n * 2 }
 
 # Implementing #select using reduce
-arr.reduce([]) { |collector, n| n.odd? ? collector << n : collector }
+arr.reduce([]) { |selected, n| n.odd? ? selected << n : selected }
 
 # Implementing #each using reduce
 arr.reduce(nil) { |_, n| puts "number is: #{n}" }

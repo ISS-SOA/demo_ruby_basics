@@ -4,7 +4,7 @@
 # FILE READING
 
 # Open and read a file without using a block
-yellow_file = File.open('file_io/yellow.txt', 'r')
+yellow_file = File.open('yellow.txt', 'r')
 while (line = yellow_file.gets)
   puts line
 end

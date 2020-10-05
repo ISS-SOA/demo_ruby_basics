@@ -1,11 +1,10 @@
 require 'open-uri'
 
-sites = %w[slack github codecademy canvaslms]
-# => ["slack", "github", "codecademy", "canvaslms"]
+sites = %w[slack github codecademy]
 
 # FUNCTIONAL ITERATION
 titles = sites.map do |site|
-  html = open("https://www.#{site}.com").read
+  html = URI.open("https://www.#{site}.com").read
   puts "#{site} scanned"
   capture = html.match(%r{<title>(?<title>.*)<\/title>})
   capture ? capture[:title] : nil
