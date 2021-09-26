@@ -1,1 +1,4 @@
-loop { print("ruby> "); puts(eval(gets)) }
+loop {
+  print("myrepl> ")
+  puts(eval(gets))
+}

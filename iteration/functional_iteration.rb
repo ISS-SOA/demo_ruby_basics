@@ -1,6 +1,6 @@
 require 'open-uri'
 
-sites = %w[slack github codecademy]
+sites = %w[slack facebook github codecademy canvaslms]
 
 # FUNCTIONAL ITERATION
 titles = sites.map do |site|
@@ -13,7 +13,7 @@ end
 titles.each { |title| puts title if title }
 
 longest_title = titles.reduce('') do |t1, t2|
-  t2 && t2.length > t1.length ? t2 : t1
+  t2 && (t2.length > t1.length) ? t2 : t1
 end
 
 puts longest_title

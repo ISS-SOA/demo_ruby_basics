@@ -9,7 +9,3 @@ def website(names)
 end
 
 `open #{website(fullname)}`
-
-if !search_terms
-  # asdf
-end

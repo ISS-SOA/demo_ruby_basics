@@ -11,26 +11,16 @@ my_method
 # LocalJumpError: no block given (yield)
 
 status = 'Running the block'
-my_method { puts status }
+my_method { puts status; sleep(1) }
 # Starting my method
 # Running the block
 # Ending my method
-
-# One use of blocks is to setup/teardown before an operation
-def write_to_db
-  db = [] # open database
-  yield db
-  puts "DB: #{db}" # close database
-end
-
-# now we don't have to worry about opening/closing database for writes:
-write_to_db { |database| database << 5 }
 
 ## Strategies using Blocks
 # unidiomatic
 def func(x, y)
   if block_given?
-    result = yield x, y
+    result = yield(x, y)
   else
     result = x * y
   end
@@ -52,16 +42,16 @@ func(2.0, 3.0) { |num1, num2| num1 / num2 }
 
 ## LOGGING EXAMPLE (no blocks)
 def write_to_database(item)
-  puts 'Starting writing to database'
+  puts "Writing #{item} to database"
   result = DB.write(item)
-  puts 'Completing writing to database'
+  puts 'Write compelete'
   result
 end
 
 def read_from_database(item_id)
-  puts 'Starting reading from database'
+  puts "Reading item #{item_id} from database"
   item = DB.read(item_id)
-  puts 'Completing reading from database'
+  puts 'Read complete'
   item
 end
 
