@@ -10,11 +10,9 @@ while (line = yellow_file.gets)
 end
 yellow_file.close # don't forget to close!!!
 
-# Open and read a file using a block
-File.open('yellow.txt', 'r') do |file|
-  while (line = file.gets)
-    puts line
-  end
+# Open and read a file line-by-line using a block
+File.foreach('yellow.txt') do |line|
+  puts line
 end # File.open closes file when block completes
 
 # Open and read a file in one slurp!
