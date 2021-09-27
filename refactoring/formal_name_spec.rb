@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/rg'
-require_relative 'name_play.rb'
+require_relative 'formal_name.rb'
 
 describe 'Full names are properly abbreviated' do
   it 'should work with a single middle name' do
