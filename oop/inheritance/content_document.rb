@@ -8,6 +8,7 @@ module Document
     include WordContent
 
     def initialize(path)
+      super()
       doc_yaml = YAML.load(File.read(path))
       @title = doc_yaml['title']
       @type = doc_yaml['type']

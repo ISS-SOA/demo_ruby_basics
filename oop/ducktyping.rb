@@ -20,8 +20,9 @@ title = 'About Me'
 type = 'Webpage'
 author = Author.new('Soumya', '', 'Ray')
 
+doc = Document::BasicDocument.new(title, type, author)
+
 doc.summary
 # => "About Me is a Webpage by Soumya Ray"
 
-doc = Document::BasicDocument.new(title, type, author)
 puts doc.to_yaml

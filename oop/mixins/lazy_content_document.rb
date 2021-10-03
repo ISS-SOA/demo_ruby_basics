@@ -6,7 +6,6 @@ module Document
   class LazyContentDocument
     include WordContent
 
-    attr_reader :type
     attr_writer :title, :type, :author
 
     def initialize(path)

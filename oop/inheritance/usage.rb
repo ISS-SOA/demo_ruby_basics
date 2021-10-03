@@ -8,13 +8,11 @@ oop = Document::BasicDocument.new('OOP Tutorial', 'textbook', 'Soumya Ray')
 invictus = Document::LazyContentDocument.new("#{path}/invictus.yml")
 
 oop.summary
-# => "OOP Tutorial is a textbook by Soumya Ray"
 
 invictus.summary
-# => "Invictus is a poem by Willam Ernest Henley (103 words)"
 
+oop.class
 oop.class.superclass
-# => Document::BaseDocument
 
+invictus.class
 invictus.class.superclass
-# => Document::BaseDocument

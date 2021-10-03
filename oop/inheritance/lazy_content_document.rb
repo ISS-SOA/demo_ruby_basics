@@ -8,6 +8,7 @@ module Document
     include WordContent
 
     def initialize(path)
+      super()
       @path = path
       @document_read = false
     end

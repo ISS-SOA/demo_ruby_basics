@@ -10,10 +10,8 @@ class Document
 end
 
 doc = Document.new
-# => #<Document:0x007fed0292f9e0 @accessed=0>
 
 doc.describe_object
-# => "Document object (you've asked 1 times)"
 
 doc.accessed
 
@@ -28,7 +26,7 @@ Document.methods - Object.methods
 Document.new.methods - Object.new.methods
 # => [:describe_object]
 
-# Reopen and add accessor methods
+# Reopen and add a class-level method
 class Document
   puts 'Re-opening and changing Document'
 
