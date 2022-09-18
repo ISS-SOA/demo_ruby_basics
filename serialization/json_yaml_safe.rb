@@ -36,6 +36,8 @@ end
 my_book = Book.new('The Unbearable Lightness of Being', 'Milan Kundera')
 
 class BookLibrary
+  attr_reader :collection
+
   def initialize
     @collection = []
   end
@@ -52,6 +54,8 @@ my_library.add_book('Seven Pillars of Wisdom', 'T.E. Lawrence')
 ## Serializing/Deserializing Hash/Array Data Structures
 
 # Json
+require 'json'
+
 lightness_of_being.to_json
 
 puts library.to_json

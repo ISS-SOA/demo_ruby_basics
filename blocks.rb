@@ -10,7 +10,7 @@ my_method
 # Starting my method
 # LocalJumpError: no block given (yield)
 
-status = 'Running the block'
+status = 'Running the block...'
 my_method { puts status; sleep(1) }
 # Starting my method
 # Running the block
