@@ -3,7 +3,7 @@ require 'http'
 def save_url(url_string, filename)
   if url_string
     if filename
-      if File.exists?(filename)
+      if File.exist?(filename)
         raise ArgumentError, 'file already exists'
       else
         begin

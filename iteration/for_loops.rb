@@ -1,7 +1,7 @@
 # rubocop:disable all
 require 'open-uri'
 
-sites = %w[slack facebook github codecademy canvaslms]
+sites = %w{slack facebook github codecademy canvaslms}
 
 # PROCEDURAL FOR LOOPS
 titles = []
