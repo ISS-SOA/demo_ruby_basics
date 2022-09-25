@@ -1,16 +1,16 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    minitest (5.14.2)
+    minitest (5.16.3)
     minitest-rg (5.2.0)
       minitest (~> 5.0)
 
 PLATFORMS
-  ruby
+  arm64-darwin-21
 
 DEPENDENCIES
   minitest
   minitest-rg
 
 BUNDLED WITH
-   2.1.4
+   2.3.7

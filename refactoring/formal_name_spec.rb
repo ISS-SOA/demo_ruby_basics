@@ -14,4 +14,8 @@ describe 'Full names are properly abbreviated' do
   it 'should not alter a name with no middle name' do
     _(formal_name('Soumya Ray')).must_equal 'Soumya Ray'
   end
+
+  it 'should not alter a name with a hyphenated middle name' do
+    _(formal_name('Soumya-Coder Ray')).must_equal 'Soumya-Coder Ray'
+  end
 end
