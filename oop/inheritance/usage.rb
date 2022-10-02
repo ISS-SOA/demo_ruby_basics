@@ -1,6 +1,6 @@
-require_relative 'basic_document.rb'
-require_relative 'content_document.rb'
-require_relative 'lazy_content_document.rb'
+require_relative 'basic_document'
+require_relative 'content_document'
+require_relative 'lazy_content_document'
 
 path = File.expand_path(File.join(File.dirname(__FILE__), '../docs/'))
 

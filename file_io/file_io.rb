@@ -15,6 +15,14 @@ File.foreach('yellow.txt') do |line|
   puts line
 end # File.open closes file when block completes
 
+# def foreach(filename)
+#   file = open(filename)
+#   while (line = file.gets)
+#     yield
+#   end
+#   file.close
+# end
+
 # Open and read a file in one slurp!
 # note: not advisable for very large files
 red_lines = File.read('red.txt')

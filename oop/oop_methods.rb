@@ -20,11 +20,10 @@ Document.methods
 Object.methods
 
 Document.methods - Object.methods
-# => []
 
 # Instance methods
-Document.new.methods - Object.new.methods
-# => [:describe_object]
+Document.instance_methods - Object.instance_methods
+doc.methods - Object.instance_methods
 
 # Reopen and add a class-level method
 class Document

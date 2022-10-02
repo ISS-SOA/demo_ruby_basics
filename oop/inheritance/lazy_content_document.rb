@@ -16,7 +16,7 @@ module Document
     def read_document
       return if @document_read
 
-      doc_yaml = YAML.load(File.read(@path))
+      doc_yaml = YAML.safe_load(File.read(@path))
       @title = doc_yaml['title']
       @type = doc_yaml['type']
       @author = doc_yaml['author']

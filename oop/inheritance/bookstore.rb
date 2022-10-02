@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Bookstore - for reading a directory of documents
 class Bookstore
   attr_reader :docs
