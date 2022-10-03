@@ -1,10 +1,10 @@
-require_relative 'basic_document.rb'
-require_relative 'content_document.rb'
-require_relative 'lazy_content_document.rb'
+require_relative 'basic_document'
+require_relative 'content_document'
+require_relative 'lazy_content_document'
 
-path = File.expand_path(File.join(__dir__, "../docs/"))
+path = File.expand_path(File.join(__dir__, '../docs/'))
 
-oop = Document::BasicDocument.new('article', 'OOP', 'Soumya')
+oop = Document::BasicDocument.new('OOP', 'article', 'Soumya')
 oop.author
 
 invictus = Document::ContentDocument.new("#{path}/invictus.yml")

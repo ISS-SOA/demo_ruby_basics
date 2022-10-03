@@ -8,7 +8,7 @@ class Document:
     return(f"Document object (you've asked {self.accessed} times)")
 
 doc = Document()
-doc.describe_object(self)
-doc.describe_object(self)
+doc.describe_object()
+doc.describe_object()
 
 doc.accessed
