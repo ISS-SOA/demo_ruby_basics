@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 print 'Enter your first and last name: '
 fullname = gets.chomp
 
