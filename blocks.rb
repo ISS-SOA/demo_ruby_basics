@@ -28,17 +28,14 @@ def func(x, y)
   "Result: #{result}"
 end
 
-#idiomatic
-def func(x, y, &strategy)
+func(2.0, 3.0)
+func(2.0, 3.0) { |num1, num2| num1 / num2 }
+
+# idiomatic
+def func2(x, y, &strategy)
   result = strategy ? yield(x, y) : x * y
   "Result: #{result}"
 end
-
-func(2.0, 3.0)
-# => "Result: 6.0"
-
-func(2.0, 3.0) { |num1, num2| num1 / num2 }
-# => "Result: 0.6666666666666666"
 
 ## LOGGING EXAMPLE (no blocks)
 def write_to_database(item)

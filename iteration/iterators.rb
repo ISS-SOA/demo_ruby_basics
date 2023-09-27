@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Arrays are Enumerable types that can be iterated over
 arr = [2, 3, 1, 6, 4, 9]
 
