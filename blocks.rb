@@ -32,8 +32,8 @@ func(2.0, 3.0)
 func(2.0, 3.0) { |num1, num2| num1 / num2 }
 
 # idiomatic
-def func2(x, y, &strategy)
-  result = strategy ? yield(x, y) : x * y
+def func2(num1, num2, &strategy)
+  result = strategy ? yield(num1, num2) : num1 * num2
   "Result: #{result}"
 end
 
