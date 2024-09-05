@@ -4,7 +4,7 @@ def save_url(url_string, filename)
   if url_string
     if filename
       if File.exist?(filename)
-        raise ArgumentError, 'file already exists'
+        raise ArgumentError, 'File already exists'
       else
         begin
           html = HTTP.get(url_string)
@@ -14,13 +14,15 @@ def save_url(url_string, filename)
         end
       end
     else
-      raise ArgumentError, 'file name must be provided'
+      raise ArgumentError, 'File name must be provided'
     end
   else
-    raise ArgumentError, 'valid URL must be provided'
+    raise ArgumentError, 'Valid URL must be provided'
   end
 
   html
+rescue StandardError => error
+  puts error.message
 end
 
 site_url = ARGV[0]

@@ -3,15 +3,15 @@
 require 'http'
 
 def save_url(url_string, filename)
-  raise ArgumentError, 'URL must be provided' unless url_string
-  raise ArgumentError, 'file name must be provided' unless filename
-  raise IOError, 'file already exists' if File.exist?(filename)
+  raise ArgumentError, 'Valid URL must be provided' unless url_string
+  raise ArgumentError, 'File name must be provided' unless filename
+  raise IOError, 'File already exists' if File.exist?(filename)
 
   html = HTTP.get(url_string).body.to_s
   File.write(filename, html)
   html
 rescue StandardError => e
-  raise IOError, e
+  puts e.message
 end
 
 site_url, filename = ARGV
