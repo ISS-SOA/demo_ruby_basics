@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 
-# Linting
+# Style guides
 gem 'rubocop'
+gem 'reek'

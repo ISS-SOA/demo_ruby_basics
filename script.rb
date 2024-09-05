@@ -10,4 +10,4 @@ def website(names)
   "https://www.google.com/search?q=#{search_terms}"
 end
 
-`open #{website(fullname)}`
+system("open #{website(fullname)}")
