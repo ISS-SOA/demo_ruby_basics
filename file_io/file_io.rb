@@ -15,6 +15,7 @@ File.foreach('yellow.txt') do |line|
   puts line
 end # File.open closes file when block completes
 
+# EXAMPLE: Implementing foreach
 # def foreach(filename)
 #   file = open(filename)
 #   while (line = file.gets)
