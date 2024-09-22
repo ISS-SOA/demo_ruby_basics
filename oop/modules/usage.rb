@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'basic_document'
 require_relative 'content_document'
 require_relative 'lazy_content_document'
@@ -9,6 +11,8 @@ oop.author
 
 invictus = Document::ContentDocument.new("#{path}/invictus.yml")
 invictus.author
+invictus.word_count
 
 miser = Document::LazyContentDocument.new("#{path}/miser.yml")
-miser.content.size
+miser.author
+miser.word_count

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Document
   # Stores information about documents
   class BasicDocument

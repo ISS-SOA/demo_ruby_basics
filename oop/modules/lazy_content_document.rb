@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'yaml'
 
 module Document
@@ -11,7 +13,8 @@ module Document
 
     def read_document
       return if @content
-      puts 'Lazy Load'
+
+      puts 'Loading content from file'
       doc_yaml = YAML.safe_load File.read(@path)
       @title = doc_yaml['title']
       @type = doc_yaml['type']

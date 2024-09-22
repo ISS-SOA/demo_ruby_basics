@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'yaml'
 
 module Document
@@ -7,7 +9,7 @@ module Document
     attr_accessor :title, :author, :content
 
     def initialize(path)
-      puts 'Loading file'
+      puts 'Loading content from file'
       doc_yaml = YAML.load(File.read(path))
       @title = doc_yaml['title']
       @type = doc_yaml['type']

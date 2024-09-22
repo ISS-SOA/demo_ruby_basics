@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # BasicDocument - Most basic version of a document, with no meta/mixins/etc.
 class BasicDocument
   def title
@@ -26,3 +28,5 @@ class BasicDocument
     @author = author
   end
 end
+
+# BasicDocument.instance_methods - Object.instance_methods

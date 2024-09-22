@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Document - Stores the title, author, and contents of a document
 class BasicDocument
   attr_reader :type
@@ -10,4 +12,4 @@ class BasicDocument
   end
 end
 
-BasicDocument.instance_methods - Object.instance_methods
+# BasicDocument.instance_methods - Object.instance_methods
