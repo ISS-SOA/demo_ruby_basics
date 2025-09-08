@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # BASIC BLOCKS
 
 def my_method
@@ -7,14 +9,9 @@ def my_method
 end
 
 my_method
-# Starting my method
-# LocalJumpError: no block given (yield)
 
-status = 'Running the block...'
+status = 'Wait a second...'
 my_method { puts status; sleep(1) }
-# Starting my method
-# Running the block
-# Ending my method
 
 ## Strategies using Blocks
 # unidiomatic
@@ -32,8 +29,8 @@ func(2.0, 3.0)
 func(2.0, 3.0) { |num1, num2| num1 / num2 }
 
 # idiomatic
-def func2(num1, num2, &strategy)
-  result = strategy ? yield(num1, num2) : num1 * num2
+def func2(num1, num2)
+  result = block_given? ? yield(num1, num2) : num1 * num2
   "Result: #{result}"
 end
 
@@ -51,7 +48,6 @@ def read_from_database(item_id)
   puts 'Read complete'
   item
 end
-
 
 # LOGGING WITH BLOCKS
 def with_logging(description)
